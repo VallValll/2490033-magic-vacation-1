@@ -81,6 +81,12 @@
 .form__button {
   width: 18rem;
 
+  .result--prize & {
+    @media (min-width: $tablet) and (orientation: landscape) {
+      width: 28rem;
+    }
+  }
+
   @media (orientation: portrait) {
     position: relative;
     flex: none;
