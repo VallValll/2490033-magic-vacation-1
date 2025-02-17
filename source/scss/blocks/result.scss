@@ -505,4 +505,15 @@
       width: 45rem;
     }
   }
+
+  .result__button {
+    opacity: 0;
+    animation: showTitleResult 1s ease-in forwards;
+    animation-delay: 1s;
+
+    span {
+      animation: spinRight 0.7s 1 forwards;
+      animation-delay: 1s;
+    }
+  }
 }
