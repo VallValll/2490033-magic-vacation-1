@@ -1,4 +1,6 @@
 :root {
+  --color-hover: #{$c-purple};
+
   font-size: 0.69445vw;
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -16,6 +18,22 @@
       font-size: 2vw;
     }
   }
+}
+
+[data-theme="purple"] {
+  --color-hover: #{$c-dark};
+}
+
+[data-theme="blue"] {
+  --color-hover: #{$c-blue-2};
+}
+
+[data-theme="light-blue"] {
+  --color-hover: #{$c-blue};
+}
+
+[data-theme="dark"] {
+  --color-hover: #{$c-purple};
 }
 
 html {

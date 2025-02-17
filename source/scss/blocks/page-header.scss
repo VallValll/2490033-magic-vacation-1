@@ -277,6 +277,14 @@
     color: inherit;
     padding: 0 0.5em 0.5em;
 
+    &.active {
+      color: var(--color-hover);
+
+      &::after {
+        background-color: var(--color-hover);
+      }
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -302,14 +310,14 @@
 
     &:hover,
     &:focus {
-      color: $c-purple;
+      color: var(--color-hover);
       outline: none;
 
       &::after {
         width: 100%;
         right: auto;
         left: 0;
-        background-color: $c-purple;
+        background-color: var(--color-hover);
       }
     }
   }
