@@ -1,0 +1,46 @@
+.active {
+  .text-accent-char {
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+}
+
+.text-accent {
+  &-word {
+    display: inline-block;
+    overflow: hidden;
+    padding: 20px 10px 0;
+    margin: -20px -10px 0;
+  }
+
+  &-char {
+    position: relative;
+    display: inline-block;
+
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        transform: translate3d(0, 200%, 0);
+        transition: transform 0.55s ease-out;
+      }
+
+      &:nth-child(1n) {
+        transition-delay: 0.3s;
+      }
+
+      &:nth-child(2n) {
+        transition-delay: 0.2s;
+      }
+
+      &:nth-child(3n) {
+        transition-delay: 0s;
+      }
+
+      &:nth-child(4n) {
+        transition-delay: 0.1s;
+      }
+    }
+  }
+}

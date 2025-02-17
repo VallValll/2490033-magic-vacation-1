@@ -1,4 +1,5 @@
 import throttle from 'lodash/throttle';
+import overlay from './overlay';
 
 export default class FullPageScroll {
   constructor() {
@@ -42,7 +43,10 @@ export default class FullPageScroll {
   onUrlHashChanged() {
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
-    this.changePageDisplay();
+
+    overlay.show(this.changePageDisplay.bind(this));
+
+    // this.changePageDisplay();
   }
 
   changePageDisplay() {

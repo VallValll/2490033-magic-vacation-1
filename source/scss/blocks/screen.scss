@@ -1,8 +1,23 @@
+.load {
+  .screen__footer {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .screen__disclaimer {
+    transform: translateY(0);
+
+    @media (max-width: $tablet) and (orientation: portrait) {
+      opacity: 1;
+    }
+  }
+}
+
 .screen {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   z-index: 1;
   overflow: hidden;
 
@@ -14,7 +29,7 @@
     min-height: calc(var(--vh, 1vh) * 100);
   }
 
-  @media (max-width: $tablet - 1) and (orientation: landscape) {
+  @media (max-width: #{$tablet - 1}) and (orientation: landscape) {
     height: 100vh;
   }
 }
@@ -36,6 +51,14 @@
   left: 0;
   right: 0;
   z-index: 1;
+  transform: translateY(50%);
+  transition: transform 0.5s ease-out;
+
+  @media (max-width: $tablet) and (orientation: portrait) {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
 }
 
 .screen__footer {
@@ -46,6 +69,9 @@
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0, -0.02, 0.03, 0.56);
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
@@ -303,6 +329,16 @@
 
 .screen--prizes {
   background-color: $c-dark;
+
+  .screen__footer {
+    transform: translateY(100%);
+  }
+
+  &.active {
+    .screen__footer {
+      transform: translateY(0);
+    }
+  }
 }
 
 .screen--game {

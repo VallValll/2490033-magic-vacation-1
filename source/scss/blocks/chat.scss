@@ -1,3 +1,27 @@
+.active {
+  .chat__footer {
+    .form__field {
+      width: calc(100% - 21rem);
+
+      &::placeholder {
+        opacity: 1;
+      }
+
+      @media (orientation: portrait) {
+        width: calc(100% - 5rem);
+      }
+
+      @media (max-width: $tablet) and (orientation: landscape) {
+        width: calc(100% - 9rem);
+      }
+
+      @media (max-width: $mobile) and (orientation: landscape) {
+        width: calc(100% - 5rem);
+      }
+    }
+  }
+}
+
 .chat {
   flex-grow: 1;
   display: flex;
@@ -185,4 +209,19 @@
 
 .chat__footer {
   margin-top: auto;
+  position: relative;
+
+  .form {
+    justify-content: end;
+  }
+
+  .form__field {
+    width: 10%;
+    transition: width 0.8s ease-out;
+
+    &::placeholder {
+      opacity: 0;
+      transition: opacity 0.4s ease-out 0.55s;
+    }
+  }
 }

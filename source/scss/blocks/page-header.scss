@@ -1,3 +1,29 @@
+.load {
+  .page-header__logo {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .page-header__menu {
+    opacity: 1;
+  }
+
+  .page-header__menu a {
+    &.active {
+      &::after {
+        width: 100%;
+        left: 0;
+        opacity: 1;
+        transition-delay: 125ms;
+      }
+    }
+  }
+
+  .page-header__toggler {
+    opacity: 1;
+  }
+}
+
 .page-header {
   position: fixed;
   top: 0;
@@ -35,6 +61,9 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  transform: translateX(-20%);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0, -0.02, 0.03, 0.56);
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -81,6 +110,8 @@
   background-color: $c-light;
   border-radius: 50%;
   z-index: 1;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0, -0.02, 0.03, 0.56);
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: block;
@@ -130,6 +161,7 @@
 .page-header__nav {
   display: flex;
   align-items: center;
+  transition: all 0.3s ease-out;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
@@ -177,6 +209,9 @@
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
+  opacity: 0;
+  transition: opacity 230ms cubic-bezier(0, -0.02, 0.03, 0.56);
+  transition-delay: 120ms;
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -242,15 +277,23 @@
     color: inherit;
     padding: 0 0.5em 0.5em;
 
+    &.active {
+      color: var(--color-hover);
+
+      &::after {
+        background-color: var(--color-hover);
+      }
+    }
+
     &::after {
       content: "";
       position: absolute;
       bottom: 0;
-      width: 100%;
+      right: 0;
       height: 2px;
       background-color: $c-light;
-      display: none;
-      left: 0;
+      transition: width 375ms ease;
+      width: 0;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -265,20 +308,16 @@
       }
     }
 
-    &.active {
-      &::after {
-        display: block;
-      }
-    }
-
     &:hover,
     &:focus {
-      color: $c-purple;
+      color: var(--color-hover);
       outline: none;
 
       &::after {
-        opacity: 1;
-        background-color: $c-purple;
+        width: 100%;
+        right: auto;
+        left: 0;
+        background-color: var(--color-hover);
       }
     }
   }
@@ -286,6 +325,8 @@
 
 .page-header__social {
   margin-left: 4.8rem;
+  transition: all 0.3s cubic-bezier(0, 0, 0.03, 0.56);
+  transition-delay: 0.3s;
 
   @media (min-width: $stop-scaling) {
     margin-left: 48px;

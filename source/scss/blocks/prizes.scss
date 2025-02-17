@@ -1,3 +1,14 @@
+.active {
+  .prizes__lead {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .prizes__list {
+    opacity: 1;
+  }
+}
+
 .prizes {
   flex-grow: 1;
   display: flex;
@@ -58,6 +69,9 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
+  opacity: 0;
+  transform: translateY(30%);
+  transition: all 0.5s ease-in-out 0.7s;
 
   @media (min-width: $stop-scaling) {
     margin-left: 58px;
@@ -94,6 +108,8 @@
   justify-content: flex-end;
   align-items: flex-end;
   margin-top: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out 1.3s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     flex-direction: column;
