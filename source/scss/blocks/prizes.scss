@@ -263,6 +263,10 @@
 }
 
 .prizes__icon {
+  @media (min-width: $tablet) {
+    transform: scale(1.5) translateY(-40px);
+  }
+
   @media (max-width: $tablet) and (orientation: portrait) {
     margin-right: 3.8rem;
   }
