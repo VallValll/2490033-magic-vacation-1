@@ -4,8 +4,12 @@
     opacity: 1;
   }
 
-  .prizes__list {
-    opacity: 1;
+  .prizes__item--journeys {
+    transform: translate(0, 0);
+
+    .prizes__desc {
+      opacity: 1;
+    }
   }
 }
 
@@ -108,7 +112,6 @@
   justify-content: flex-end;
   align-items: flex-end;
   margin-top: auto;
-  opacity: 0;
   transition: opacity 0.5s ease-in-out 1.3s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -149,6 +152,18 @@
       bottom: -1.4rem;
       width: 26.8rem;
 
+      picture {
+        &:nth-child(2) {
+          position: absolute;
+          left: 0;
+          top: 0;
+
+          @media (max-width: $tablet) {
+            display: none;
+          }
+        }
+      }
+
       @media (min-width: $stop-scaling) {
         left: -59px;
         bottom: -14px;
@@ -170,10 +185,22 @@
         width: 10rem;
       }
     }
+
+    .prizes__desc {
+      @media (min-width: $tablet) {
+        transition: 0.7s ease-out 3.5s;
+      }
+    }
+
+    @media (min-width: $tablet) {
+      transform: translate(100%, 0);
+      transition: 0.7s ease-out 5s;
+    }
   }
 
   &--cases {
     margin-left: 7rem;
+    opacity: 0;
 
     @media (min-width: $stop-scaling) {
       margin-left: 70px;
@@ -207,6 +234,8 @@
   }
 
   &--codes {
+    opacity: 0;
+
     @media (max-width: $tablet) and (orientation: portrait) {
       padding-left: 0.8rem;
     }
@@ -251,6 +280,7 @@
   margin: 5.6rem 0 0 0;
   font-size: 1.8rem;
   line-height: 1.1;
+  opacity: 0;
 
   @media (min-width: $stop-scaling) {
     margin-top: 56px;
