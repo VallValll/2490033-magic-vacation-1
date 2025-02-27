@@ -74,15 +74,27 @@
       <path d="M141,264.26a236.09,236.09,0,0,0-5.58,29.9,117.46,117.46,0,0,0,11.15-27.73,127.2,127.2,0,0,0,4-31A214.24,214.24,0,0,0,141,264.26" fill="#068e4d"/>
       <path d="M92.62,217.67A529.26,529.26,0,0,1,149.48,328" fill="none" stroke="#36e69a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
       <animateTransform
+        id="list"
         attributeName="transform"
         type="skewX"
-        values="4; -10; 4"
-        dur="1s"
+        values="0; 2; -10; 8; -5; 0"
+        dur="3.5s"
         begin="3.5s"
-        keyTimes="0; 0.5; 1"
-        keySplines="0.12, 0, 0.39, 0; 0.12, 0, 0.39, 0"
+        keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1"
+        keySplines="0.65, 0, 0.35, 1; 0.65, 0, 0.35, 1; 0.65, 0, 0.35, 1; 0.65, 0, 0.35, 1; 0.65, 0, 0.35, 1;"
         calcMode="spline"
-        repeatCount="2"/>
+        repeatCount="1"/>
+      <animateTransform
+        attributeName="transform"
+        type="skewY"
+        values="0; -2; 10; -8; 5; 0"
+        dur="3.5s"
+        begin="list.begin"
+        keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1"
+        keySplines="0.65, 0, 0.35, 1; 0.65, 0, 0.35, 1; 0.65, 0, 0.35, 1; 0.65, 0, 0.35, 1; 0.65, 0, 0.35, 1"
+        calcMode="spline"
+        repeatCount="1"
+        additive="sum"/>
     </g>
     <g>
      <line x1="72.03" y1="329" x2="295.52" y2="329" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>

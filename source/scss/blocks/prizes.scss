@@ -11,6 +11,12 @@
       opacity: 1;
     }
   }
+
+  .prizes__item--cases {
+    .prizes__desc {
+      opacity: 1;
+    }
+  }
 }
 
 .prizes {
@@ -164,6 +170,10 @@
         }
       }
 
+      @media (min-width: $tablet) {
+        transform: scale(1.4) translate(0, -40px);
+      }
+
       @media (min-width: $stop-scaling) {
         left: -59px;
         bottom: -14px;
@@ -200,7 +210,6 @@
 
   &--cases {
     margin-left: 7rem;
-    opacity: 0;
 
     @media (min-width: $stop-scaling) {
       margin-left: 70px;
@@ -213,6 +222,10 @@
 
     .prizes__icon {
       width: 18.8rem;
+
+      @media (min-width: $tablet) {
+        transform: scale(1.7) translate(0, -30px);
+      }
 
       @media (min-width: $stop-scaling) {
         width: 188px;
@@ -231,11 +244,15 @@
         width: 7rem;
       }
     }
+
+    .prizes__desc {
+      @media (min-width: $tablet) {
+        transition: 0.7s ease-out 7.5s;
+      }
+    }
   }
 
   &--codes {
-    opacity: 0;
-
     @media (max-width: $tablet) and (orientation: portrait) {
       padding-left: 0.8rem;
     }
@@ -263,10 +280,6 @@
 }
 
 .prizes__icon {
-  @media (min-width: $tablet) {
-    transform: scale(1.5) translateY(-40px);
-  }
-
   @media (max-width: $tablet) and (orientation: portrait) {
     margin-right: 3.8rem;
   }
